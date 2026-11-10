@@ -33,12 +33,22 @@ Restricciones
 
 def contar_desde_limite(valores, limite, i=0):
     """Cuenta desde la posición i hasta el final. Se asume 0 <= i <= len(valores)."""
-    pass
+    if i == len(valores):
+        return 0
+    
+    if valores[i] >= limite:
+        return 1 + contar_desde_limite(valores, limite, i + 1)
+    else:
+        return contar_desde_limite(valores, limite, i + 1)
 
 
 def contar_desde_limite_iterativo(valores, limite):
     """Cuenta en la lista completa usando un ciclo."""
-    pass
+    contador = 0
+    for valor in valores:
+        if valor >= limite:
+            contador += 1
+    return contador
 
 
 # ---------------------------------------------------------------------

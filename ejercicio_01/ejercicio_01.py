@@ -27,7 +27,12 @@ Restricciones
 
 
 def potencia(base, exponente):
-    pass
+    # Caso base: cualquier número elevado a la 0 es 1
+    if exponente == 0:
+        return 1
+    
+    # Llamada recursiva: multiplicamos la base y reducimos el exponente
+    return base * potencia(base, exponente - 1)
 
 
 # ---------------------------------------------------------------------
